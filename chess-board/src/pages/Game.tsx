@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import { useSocket } from "../components/useSocket"
 import { Chessboard } from "./Chessboard"
 import { Chess } from "chess.js"
+import WebSocketErrorPage from "./Error"
 
 export const INIT_GAME = "init_game"
 export const MOVE = "move"
@@ -41,7 +42,10 @@ const [board, setBoard] =useState(chess.board());
         }
     }, [socket])
 
-    if (!socket) return <div>loading....</div>
+    if (!socket) return <div>
+        <WebSocketErrorPage></WebSocketErrorPage>
+
+    </div>
     return (
         <div >
             <div className="w-screen h-screen bg-gray-800 grid grid-cols-2 justify-center items-center  ">

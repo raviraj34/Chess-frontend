@@ -15,7 +15,7 @@ export const Chessboard = ({ board, chess, socket, setBoard }: {
 }) => {
 
     const [from, setfrom] = useState<null | Square>(null);
-    const [to, setto] = useState<null | Square>(null);
+
     return (
         <div className="ml-30">
             {board.map((row, i) => {

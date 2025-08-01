@@ -33,7 +33,7 @@ const ServerOffIcon: React.FC<SVGIconProps> = ({ className }) => (
 
 
 const WebSocketErrorPage: React.FC = () => {
-  const [isModalOpen, setIsModalOpen] = useState<boolean>(true);
+  const [isModalOpen] = useState<boolean>(true);
 
   const handleRetry = () => {
     window.location.reload();
